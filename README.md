@@ -21,7 +21,7 @@ unlock        | Asks for you to enter the password to unlock the folder
 
 #Instructions
 1. First, git clone this repo onto your desktop. `git clone https://github.com/xSynthx/py-folder-lock`
-2. Add your password to SeceretPasswordFile.txt before ever running this program. *make sure that this file is always in the same directory that you are running the program from or you will get an error.*
+2. Add your password to `SeceretPasswordFile.txt` **before** ever running this program. *make sure that this file is always in the same directory that you are running the program from or you will get an error.*
 3. Make a folder on your desktop called Hidden Folder
 4. Open terminal, cd to the directory that the folder-locker.py is. *I prefer Desktop*
 5. Run `python3 folder-locker.py`
