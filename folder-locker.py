@@ -7,7 +7,8 @@
 
 # os.system('clear') is in place to keep people from seeing your password after you press enter!
 import readline # arrow keys
-import os # This imports your OS.
+import os # This imports the OS module
+import getpass # Allows for echo-free input.
 version = 'V2.0.0'
 incorrect = 'Wrong password, Please try again!' # You can change this to say whatever you like!
 exitsentence = 'Exiting Folder Lock ' + version + '\n'
@@ -33,22 +34,22 @@ def Main():
 	maininput = input(">>> ") # You can change this to whatever you like! Dont forget the space after it.
 	if maininput == 'help':
 		helpme()
-	elif maininput == 'unlock':
+	elif maininput.lower() == 'unlock':
 		unlockst()
-	elif maininput == 'lock':
+	elif maininput.lower() == 'lock':
 		os.system("clear")
 		print('Folder locked! ' + exitsentence)
 		os.system('chflags hidden ~/Desktop/Hidden\ Folder') # Change ~/Desktop/HiddenFolder to what ever directory of your choice, and whatever name you want for the folder.
 		exit = True
-	elif maininput == 'exit':
+	elif maininput.lower() == 'exit':
 		os.system('clear')
 		print(exitsentence)
 		exit = True
-	elif maininput == 'Exit':
+	elif maininput.lower() == 'Exit':
 		os.system('clear')
 		print(exitsentence)
 		exit = True
-	elif maininput == 'clear':
+	elif maininput.lower() == 'clear':
 		os.system('clear')
 	else:
 		print('[ERROR] COMMAND NOT FOUND\nPLEASE USE A PROPER COMMAND!')
@@ -68,13 +69,13 @@ def unlockst():
 	unlockmain()
 def unlockmain():
 	global exit
-	typedPassword = input(">>> ") # You can change this to whatecer you like! Dont forget the space after it.
+	typedPassword = getpass.getpass(">>> ") # You can change this to whatecer you like! Dont forget the space after it. This is the prompt for your password.
 	if typedPassword == secretPassword:
 		os.system("clear")
 		print('Folder Unlocked! ' + exitsentence)
 		os.system("chflags nohidden ~/Desktop/Hidden\ Folder") # Change ~/Desktop/HiddenFolder to what ever directory of your choice, and whatever name you want for the folder.
 		exit = True
-	elif typedPassword == 'password':
+	elif typedPassword.lower() == 'password':
 		os.system('clear')
 		print(idiot)
 		exit = True
@@ -82,26 +83,18 @@ def unlockmain():
 		os.system('clear')
 		print(idiot)
 		exit = True
-	elif typedPassword == 'synthx':
+	elif typedPassword.lower() == 'synthx':
 		os.system('clear')
 		print(idiot)
 		exit = True
-	elif typedPassword == 'Synthx':
-		os.system('clear')
-		print(idiot)
-		exit = True
-	elif typedPassword == 'exit':
+	elif typedPassword.lower() == 'exit':
 		os.system('clear')
 		print(exitsentence)
 		exit = True
-	elif typedPassword == 'Exit':
-		os.system('clear')
-		print(exitsentence)
-		exit = True
-	elif typedPassword == 'lock':
+	elif typedPassword.lower() == 'lock':
 		os.system('clear')
 		print('You cannot use this command as the folder is already locked :/')
-	elif typedPassword == 'clear':
+	elif typedPassword.lower() == 'clear':
 		os.system('clear')
 	else:
 		os.system("clear")
