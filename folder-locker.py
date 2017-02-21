@@ -8,7 +8,7 @@
 # os.system('clear') is in place to keep people from seeing your password after you press enter!
 import readline # arrow keys
 import os # This imports your OS.
-version = 'V2.0.0'
+version = 'V2.0.1'
 incorrect = 'Wrong password, Please try again!' # You can change this to say whatever you like!
 exitsentence = 'Exiting Folder Lock ' + version + '\n'
 exit = False
@@ -50,6 +50,9 @@ def Main():
 		exit = True
 	elif maininput == 'clear':
 		os.system('clear')
+	elif maininput == 'creds':
+		os.system('clear')
+		print('©2017 Synthx')
 	else:
 		print('[ERROR] COMMAND NOT FOUND\nPLEASE USE A PROPER COMMAND!')
 def helpme():
@@ -60,6 +63,7 @@ def helpme():
 	print('| lock       |   locks the folder            |')
 	print('| exit       |   exits the program           |')
 	print('| clear      |   clears the screen           |')
+	print('| creds      |   shows credits for program   |')
 	print('|------------|-------------------------------|')
 	Main()
 def unlockst():
@@ -103,6 +107,9 @@ def unlockmain():
 		print('You cannot use this command as the folder is already locked :/')
 	elif typedPassword == 'clear':
 		os.system('clear')
+	elif maininput == 'creds':
+		os.system('clear')
+		print('You are not allowed to enter that command here!\nIf you would like to see creds, please type "up"! Otherwise,\nPlease enter in password to unlock the folder!')
 	else:
 		os.system("clear")
 		print(incorrect)
