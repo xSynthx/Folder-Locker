@@ -8,6 +8,7 @@ Folder Locker is a Python program for mac users that "password" protects a folde
 ![Preview](https://cdn.discordapp.com/attachments/266624342832447488/283657604381802496/Screen_Shot_2017-02-21_at_11.37.11_AM.png)
 
 #Commands
+Commands      | Definitions
 ------------- | -------------
 help          | Displays this dialog
 clear         | Clears the screen
