@@ -5,6 +5,8 @@
 #  Email: synthx@protonmail.com or synthx01@gmail.com                            #
 ##################################################################################
 
+#EDIT BY JOHNATHON OF CRYPTODEN
+
 # os.system('clear') is in place to keep people from seeing your password after you press enter!
 import readline # arrow keys
 import os # This imports your OS.
@@ -40,11 +42,7 @@ def Main():
 		print('Folder locked! ' + exitsentence)
 		os.system('chflags hidden ~/Desktop/Hidden\ Folder') # Change ~/Desktop/HiddenFolder to what ever directory of your choice, and whatever name you want for the folder.
 		exit = True
-	elif maininput == 'exit':
-		os.system('clear')
-		print(exitsentence)
-		exit = True
-	elif maininput == 'Exit':
+	elif maininput == 'exit' or 'Exit':
 		os.system('clear')
 		print(exitsentence)
 		exit = True
@@ -86,19 +84,11 @@ def unlockmain():
 		os.system('clear')
 		print(idiot)
 		exit = True
-	elif typedPassword == 'synthx':
+	elif typedPassword == 'synthx' or 'Synthx':
 		os.system('clear')
 		print(idiot)
 		exit = True
-	elif typedPassword == 'Synthx':
-		os.system('clear')
-		print(idiot)
-		exit = True
-	elif typedPassword == 'exit':
-		os.system('clear')
-		print(exitsentence)
-		exit = True
-	elif typedPassword == 'Exit':
+	elif typedPassword == 'exit' or 'Exit':
 		os.system('clear')
 		print(exitsentence)
 		exit = True
