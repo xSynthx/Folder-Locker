@@ -1,6 +1,6 @@
 ##################################################################################
 #  ©2017 Synthx                                                                  #
-#  You may not redistribute as yours unless you have writen consent from Synthx  #
+#  You may not redistribute as yours unless you have written consent from Synthx #
 #  Twitter: @_synthx                                                             #
 #  Email: synthx@protonmail.com or synthx01@gmail.com                            #
 ##################################################################################
