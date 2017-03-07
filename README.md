@@ -15,7 +15,7 @@ clear         | Clears the screen
 exit          | Exits the program
 lock          | Locks your folder
 unlock        | Asks for you to enter the password to unlock the folder
-creds         | Shows credits for program
+info          | Shows credits for program
 
 #Requirements
 1. Python3 or higher!
