@@ -23,13 +23,11 @@ info          | Shows credits for program
 #Instructions
 1. First, git clone this repo onto your desktop. `git clone https://github.com/xSynthx/py-folder-lock`
 2. Add your password to `SeceretPasswordFile.txt` **before** ever running this program. *make sure that this file is always in the same directory that you are running the program from or you will get an error.*
-3. Make a folder on your desktop called Hidden Folder
-4. Open terminal, cd to the directory that the folder-locker.py is. *I prefer Desktop*
-5. Run `python3 folder-locker.py`
-6. All done!
+3. Open terminal, cd to the directory that the folder-locker.py is. *I prefer Desktop*
+4. Run `python3 folder-locker.py`
+5. All done!
 
 #Credits
 1. Me! Of course!
-2. [ @NyteLife26 ](https://github.com/Nytelife26) *for helping me get started with mainly* `import os`.
-3. [ @danbatiste ](https://github.com/danbatiste) *for helping me with def Main():*
-4. [ @0xCoto ](https://github.com/0xCoto) *for helping me make the Folder Locker figlet*
+2. [ @NyteLife26 ](https://github.com/Nytelife26)
+3. [ @danbatiste ](https://github.com/danbatiste)
