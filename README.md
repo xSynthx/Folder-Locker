@@ -5,7 +5,7 @@ This is a simple program written in Python for MacOS users that will lock and un
 Folder Locker is a Python program for mac users that "password" protects a folder! *Mainly called Hidden Folder*
 
 #Preview
-![Preview](https://cdn.discordapp.com/attachments/266624342832447488/283657604381802496/Screen_Shot_2017-02-21_at_11.37.11_AM.png)
+[![https://gyazo.com/ab9e03c252c81fb7bb7623ca6bbb4cb8](https://i.gyazo.com/ab9e03c252c81fb7bb7623ca6bbb4cb8.png)](https://gyazo.com/ab9e03c252c81fb7bb7623ca6bbb4cb8)
 
 #Commands
 Commands      | Definitions
