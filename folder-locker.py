@@ -1,5 +1,4 @@
 ##################################################################################
-#  ©2017 Synthx                                                                  #
 #  You may not redistribute as yours unless you have written consent from Synthx #
 #  Twitter: @_synthx                                                             #
 #  Email: synthx@protonmail.com or synthx01@gmail.com                            #
@@ -19,17 +18,22 @@ color = {
     'DEFAULT'         : '\033[0m',
     'TWITTER_BLUE'            : '\033[38;5;33m',
 }
+alias = {
+	'idiot' : ["password", "12345", "synthx", "qwerty"],
+	'help'  : ["help", "?", "/help"],
+	'exit'  : ["exit", "quit", "stop"],
+	'info'  : ["info", "credits"]
+}
 incorrect = 'Wrong password! ' # You can change this to say whatever you like!
 exitSentence = color['RED'] + '[Now Exiting!] ' + color['DEFAULT'] +'Folder Locker\n'
 exit = False
 idiot = 'You must be a idiot, you really think I would set that as my password? -_-\n' + exitSentence # You can change this to say whatever you like!
 noRun = 'You are not allowed to enter that command here!'
-credits = '©2017 Synthx\n' + color['TWITTER_BLUE'] + 'Twitter: @_Synthx' + color['DEFAULT'] + '\n@danbatiste\n@NyteLife26'
+credits = '2017 Synthx\n' + color['TWITTER_BLUE'] + 'Twitter: @_Synthx' + color['DEFAULT'] + '\n@danbatiste\n@NyteLife26'
 os.system("clear") # This will clear the screen for a nice and clean interface!
-
-os.system('chflags hidden SeceretPasswordFile.txt') # make sure this file is in same directory that you are running this script from.
-passwordFile = open('SeceretPasswordFile.txt') # make sure this file is in same directory that you are running this script from.
-secretPassword = passwordFile.read()
+os.system('chflags hidden SecretPasswordFile.txt') # make sure this file is in same directory that you are running this script from.
+passwordFile = open('SecretPasswordFile.txt') # make sure this file is in same directory that you are running this script from.
+secretPassword = passwordFile.read().splitlines()[0]
 header = color['RED'] + '''
           _____     _     _             _               _
          |  ___|__ | | __| | ___ _ __  | |    ___   ___| | _____ _ __
@@ -42,24 +46,24 @@ header = color['RED'] + '''
 print(header + 'Type "help" to begin!\n')
 def Main():
 	global exit
-	maininput = input(color['TWITTER_BLUE'] + 'Folder Locker> ' + color['DEFAULT']) # You can change this to whatever you like! Dont forget the space after it.
-	if maininput == '':
-		Main()
-	elif maininput.lower() == 'help':
+	maininput = input(color['TWITTER_BLUE'] + 'Folder Locker> ' + color['DEFAULT']).lower() # You can change this to whatever you like! Dont forget the space after it.
+	while not maininput:
+		maininput = input(color['TWITTER_BLUE'] + 'Folder Locker> ' + color['DEFAULT']).lower() # You can change this to whatever you like! Dont forget the space after it.
+	if maininput in alias['help']:
 		helpme()
-	elif maininput.lower() == 'unlock':
+	elif maininput == 'unlock':
 		unlockst()
-	elif maininput.lower() == 'lock':
+	elif maininput == 'lock':
 		lockFolder()
-	elif maininput.lower() == 'exit':
+	elif maininput in alias['exit']:
 		os.system('clear')
 		print(exitSentence)
 		exit = True
-	elif maininput.lower() == 'clear':
+	elif maininput == 'clear':
 		os.system('clear')
 		print(header)
 		Main()
-	elif maininput.lower() == 'info':
+	elif maininput in alias['info']:
 		os.system('clear')
 		print(credits)
 		Main()
@@ -101,40 +105,29 @@ def unlockMain(folder_select):
 	os.system('clear')
 	print(header + 'Please enter in password to unlock the folder!')
 	typedPassword = input(color['TWITTER_BLUE'] + "Folder Locker> " + color['DEFAULT']) # You can change this to whatever you like! Dont forget the space after it.
+	typedPasswordLow = typedPassword.lower()
 	if typedPassword == secretPassword:
 		os.system('clear;' + 'chflags nohidden ' + folder_select + ';clear')
 		print('Folder Unlocked!')
 		theExit()
-	elif typedPassword.lower() == 'password':
+	elif typedPasswordLow in alias['idiot'] and not secretPassword in alias['idiot']:
 		os.system('clear')
 		print(idiot)
 		exit = True
-	elif typedPassword == '12345':
-		os.system('clear')
-		print(idiot)
-		exit = True
-	elif typedPassword.lower() == 'synthx':
-		os.system('clear')
-		print(idiot)
-		exit = True
-	elif typedPassword.lower() == 'qwerty':
-		os.system('clear')
-		print(idiot)
-		exit = True
-	elif typedPassword.lower() == 'exit':
+	elif typedPasswordLow == 'exit':
 		os.system('clear')
 		print(exitSentence)
 		exit = True
-	elif typedPassword.lower() == 'lock':
+	elif typedPasswordLow == 'lock':
 		os.system('clear')
 		print(color['RED'] + 'You cannot use this command as the folder is already locked :/' + color['DEFAULT'])
-	elif typedPassword.lower() == 'clear':
+	elif typedPasswordLow == 'clear':
 		os.system('clear')
-	elif typedPassword.lower() == 'info':
+	elif typedPasswordLow == 'info':
 		os.system('clear')
 		print(noRun + '\nIf you would like to see credits, please type "cancel"!\nOtherwise, Please enter in password to unlock the folder!')
 		unlockMain()
-	elif typedPassword.lower() == 'cancel':
+	elif typedPasswordLow == 'cancel':
 		os.system('clear')
 		print(header)
 		Main()
