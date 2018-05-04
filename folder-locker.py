@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 ##################################################################################
+#  ©2017 Synthx                                                                  #
 #  You may not redistribute as yours unless you have written consent from Synthx #
 #  Twitter: @_synthx                                                             #
 #  Email: synthx@protonmail.com or synthx01@gmail.com                            #
@@ -22,14 +24,15 @@ alias = {
 	'idiot' : ["password", "12345", "synthx", "qwerty"],
 	'help'  : ["help", "?", "/help"],
 	'exit'  : ["exit", "quit", "stop"],
-	'info'  : ["info", "credits"]
+	'info'  : ["info", "credits"],
+	'cancel': ["cancel", "return", "back"]
 }
 incorrect = 'Wrong password! ' # You can change this to say whatever you like!
 exitSentence = color['RED'] + '[Now Exiting!] ' + color['DEFAULT'] +'Folder Locker\n'
 exit = False
 idiot = 'You must be a idiot, you really think I would set that as my password? -_-\n' + exitSentence # You can change this to say whatever you like!
 noRun = 'You are not allowed to enter that command here!'
-credits = '2017 Synthx\n' + color['TWITTER_BLUE'] + 'Twitter: @_Synthx' + color['DEFAULT'] + '\n@danbatiste\n@NyteLife26'
+credits = '©2017 Synthx\n' + color['TWITTER_BLUE'] + 'Twitter: @_Synthx' + color['DEFAULT'] + '\n@danbatiste\n@NyteLife26'
 os.system("clear") # This will clear the screen for a nice and clean interface!
 os.system('chflags hidden SecretPasswordFile.txt') # make sure this file is in same directory that you are running this script from.
 passwordFile = open('SecretPasswordFile.txt') # make sure this file is in same directory that you are running this script from.
@@ -67,7 +70,7 @@ def Main():
 		os.system('clear')
 		print(credits)
 		Main()
-	elif maininput == 'cancel':
+	elif maininput in alias['cancel']:
 		os.system('clear')
 		print(header + '\n' + color['RED'] + noRun + color['DEFAULT'] + '\nThis command is only valid when trying to unlock a folder!')
 		Main()
@@ -114,7 +117,7 @@ def unlockMain(folder_select):
 		os.system('clear')
 		print(idiot)
 		exit = True
-	elif typedPasswordLow == 'exit':
+	elif typedPasswordLow in alias['exit']:
 		os.system('clear')
 		print(exitSentence)
 		exit = True
@@ -123,11 +126,11 @@ def unlockMain(folder_select):
 		print(color['RED'] + 'You cannot use this command as the folder is already locked :/' + color['DEFAULT'])
 	elif typedPasswordLow == 'clear':
 		os.system('clear')
-	elif typedPasswordLow == 'info':
+	elif typedPasswordLow in alias['info']:
 		os.system('clear')
 		print(noRun + '\nIf you would like to see credits, please type "cancel"!\nOtherwise, Please enter in password to unlock the folder!')
 		unlockMain()
-	elif typedPasswordLow == 'cancel':
+	elif typedPasswordLow in alias['cancel']:
 		os.system('clear')
 		print(header)
 		Main()
