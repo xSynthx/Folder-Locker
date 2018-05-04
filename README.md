@@ -31,3 +31,4 @@ info          | Shows credits for program
 1. Me! Of course!
 2. [ @NyteLife26 ](https://github.com/Nytelife26)
 3. [ @danbatiste ](https://github.com/danbatiste)
+4. [ @0xAeschylus ](https://github.com/0xAeschylus)
