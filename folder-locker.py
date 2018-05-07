@@ -148,19 +148,15 @@ def lockFolder():
 def theExit():
 	global exit
 	print(header + 'Would you like to exit Folder Locker? Yes/no or Y/n')
-	exitInput = input(color['TWITTER_BLUE'] + "Folder Locker> " + color['DEFAULT'])
-	if "yes" in exitInput.lower() or "y" in exitInput.lower():
+	exitInput = input(color['TWITTER_BLUE'] + "Folder Locker> " + color['DEFAULT']).lower()
+	if "y" in exitInput or exitInput in alias['exit']:
 		os.system('clear')
 		print(exitSentence)
 		exit = True
-	elif "no" in exitInput.lower() or "n" in exitInput.lower():
+	elif "n" in exitInput:
 		os.system('clear')
 		print(header + 'Please type "help" to begin!')
 		Main()
-	elif exitInput.lower() == 'exit':
-		os.system('clear')
-		print(exitSentence)
-		exit = True
 	else:
 		os.system('clear')
 		print('You may only say yes or no!')
