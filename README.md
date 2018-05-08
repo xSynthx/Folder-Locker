@@ -8,21 +8,22 @@ Folder Locker is a Python program for mac users that "password" protects a folde
 [![https://gyazo.com/ab9e03c252c81fb7bb7623ca6bbb4cb8](https://i.gyazo.com/ab9e03c252c81fb7bb7623ca6bbb4cb8.png)](https://gyazo.com/ab9e03c252c81fb7bb7623ca6bbb4cb8)
 
 # Commands
-Commands      | Definitions
-------------- | -------------
-help          | Displays this dialog
-clear         | Clears the screen
-exit          | Exits the program
-lock          | Locks your folder
-unlock        | Asks for you to enter the password to unlock the folder
-info          | Shows credits for program
+Commands             | Definitions
+---------------------| -------------
+help, ?, /help       | Displays this dialog
+clear                | Clears the screen
+exit, quit, stop     | Exits the program
+lock                 | Locks your folder
+unlock               | Asks for you to enter the password to unlock the folder
+info, credits        | Shows credits for program
+cancel, return, back | Return to the main screen
 
 # Requirements
 1. Python3 or higher!
 
 # Instructions
 1. First, git clone this repo onto your desktop. `git clone https://github.com/xSynthx/py-folder-lock`
-2. Add your password to `SeceretPasswordFile.txt` **before** ever running this program. *make sure that this file is always in the same directory that you are running the program from or you will get an error.*
+2. Add your password to `SecretPasswordFile.txt` **before** ever running this program. *make sure that this file is always in the same directory that you are running the program from or you will get an error.*
 3. Open terminal, cd to the directory that the folder-locker.py is. *I prefer Desktop*
 4. Run `python3 folder-locker.py`
 5. All done!
